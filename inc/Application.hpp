@@ -15,11 +15,7 @@ class Application
 
    public:
     Application() = default;
-    Application(std::unique_ptr<ShopDataBase>&& shops, std::unique_ptr<UserDataBase>&& users)
-    {
-        shops_ = std::move(shops);
-        users_ = std::move(users);
-    }
+    Application(std::unique_ptr<ShopDataBase>&& shops, std::unique_ptr<UserDataBase>&& users);
     const std::shared_ptr<Shop> getNearestShop(const Location& location) const;
     const std::shared_ptr<Shop>& getShop(const Location& location) const;
 };
